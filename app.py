@@ -122,7 +122,7 @@ k1, k2, k3, k4 = st.columns(4)
 k1.metric("Breaches", f"{len(f):,}")
 k2.metric("Individuals affected", fmt(f[IND].sum()))
 k3.metric("Median breach size", f"{f[IND].median():,.0f}")
-k4.metric("Location with most individuals affected", top_loc)
+k4.metric("Top location by individuals", top_loc.replace("Electronic Medical Record", "EMR").replace("Other Portable Electronic Device", "Portable device"))
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(
     ["📊 Impact by location", "🔥 Location × breach type", "⚖️ Compare locations", "📋 Breach records", "🧭 Findings & actions"]
